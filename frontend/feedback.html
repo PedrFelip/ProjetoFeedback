@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback</title>
+</head>
+<body>
+  <h1>Enviar Feedback</h1>
+  <form id="formFeedback">
+    <textarea id="mensagem" required></textarea><br>
+    <button type="submit">Enviar</button>
+  </form>
+  <script>
+    document.getElementById('formFeedback').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const usuario_id = localStorage.getItem('userId');
+      const mensagem = document.getElementById('mensagem').value;
+
+      const res = await fetch('http://localhost:3000/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ usuario_id, mensagem })
+      });
+
+      const result = await res.json();
+      alert(result.mensagem);
+    });
+  </script>
+</body>
+</html>
