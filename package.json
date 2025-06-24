@@ -1,17 +1,21 @@
 {
   "name": "projetofeedback",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Sistema de feedback com Node.js e SQLite",
+  "main": "backend/server.js",
+  "bin": "backend/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "sqlite3": "^5.1.7"
+    "express": "^4.18.0",
+    "sqlite3": "^5.1.2",
+    "cors": "^2.8.5"
+  },
+  "pkg": {
+    "assets": [
+      "frontend/*",
+      "backend/database/feedback.db"
+    ]
   }
 }
