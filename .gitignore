@@ -1,1 +1,5 @@
 node_modules/
+<<<<<<< HEAD
+=======
+feedback.db
+>>>>>>> 79e9a15 (adiciona o arquivo server.js com configuração do servidor e rotas para cadastro e feedback)
